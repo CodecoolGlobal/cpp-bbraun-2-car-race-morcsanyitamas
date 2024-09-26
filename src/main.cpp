@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Race.h"
 #include "Car.h"
+#include "Motorcycle.h"
 #include "Weather.h"
 
 #include <cstdlib>
@@ -16,6 +17,7 @@ int main() {
 
     for(int i = 0; i < numberOfRacersPerType; i++){
         race.registerCar(Car());
+        race.registerMotorcycle(Motorcycle());
     }
 
     cout << "============================== RACE STARTS ======================================" << endl;
