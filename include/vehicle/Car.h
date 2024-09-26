@@ -2,8 +2,7 @@
 
 #include <random>
 
-class Car
-{
+class Car {
 private:
    std::string getRandomCarName();
    std::string name;
