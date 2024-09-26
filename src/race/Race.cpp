@@ -9,6 +9,11 @@ void Race::simulateRace(Weather& weather){
         isYellowFlag = false;
         weather.randomize();
         
+        for (Truck &truck : trucks) {
+            truck.prepareForLap(isYellowFlag);
+            truck.moveForAnHour();
+        }
+        
         for (Car &car : cars) {
             car.prepareForLap(isYellowFlag);
             car.moveForAnHour();
@@ -18,6 +23,7 @@ void Race::simulateRace(Weather& weather){
             motorcycle.prepareForLap(weather, isYellowFlag);
             motorcycle.moveForAnHour();
         }
+
     }
 }
 
@@ -30,6 +36,10 @@ void Race::printRaceResults() const{
 
     for (Motorcycle motorcycle : motorcycles) {
         results += motorcycle.toString() + "\n";
+    }
+
+    for (Truck truck : trucks) {
+        results += truck.toString() + "\n";
     }
 
     cout << results;
@@ -47,4 +57,9 @@ void Race::registerCar(Car car) {
 void Race::registerMotorcycle(Motorcycle motorcycle) {
     cout << motorcycle.toString() << endl;
     motorcycles.push_back(motorcycle);
+}
+
+void Race::registerTruck(Truck truck) {
+    cout << truck.toString() << endl;
+    trucks.push_back(truck);
 }
