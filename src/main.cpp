@@ -19,8 +19,8 @@ int main() {
 
     for(int i = 0; i < numberOfRacersPerType; i++){
         race.registerCar(Car());
-        race.registerMotorcycle(Motorcycle());
-        race.registerTruck(Truck());
+        // race.registerMotorcycle(Motorcycle());
+        // race.registerTruck(Truck());
     }
 
     cout << "============================== RACE STARTS ======================================" << endl;

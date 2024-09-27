@@ -27,7 +27,7 @@ void Race::simulateRace(Weather& weather){
     }
 }
 
-void Race::printRaceResults() const{
+void Race::printRaceResults() {
     string results = "";
 
     for (Car car : cars) {
@@ -45,7 +45,7 @@ void Race::printRaceResults() const{
     cout << results;
 }
 
-bool Race::isYellowFlagActive() const{
+bool Race::isYellowFlagActive() {
     return isYellowFlag;
 }
 

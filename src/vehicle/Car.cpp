@@ -2,14 +2,15 @@
 
 using namespace std;
 
-Car::Car() : name(getRandomCarName()), normalSpeed(80 + rand() % 30){}
+Car::
+
+Car::Car() : name(getRandomCarName()), normalSpeed(80 + rand() % 30), distanceTraveled(0){}
 
 string Car::getRandomCarName(){
-    vector<string> carNames = {"Aura", "Origin", "Tracer", "Roamer", "Crux", "Cobra", "Blast", "Prodigy", "Mirage", "Pulse"};
     return carNames[rand() % carNames.size()] + " " + carNames[rand() % carNames.size()];
 }
 
-void Car::prepareForLap(bool& isYellowFlag) {
+void Car::prepareForLap(bool isYellowFlag) {
     if (isYellowFlag){
         actualSpeed = 75;
     } else {

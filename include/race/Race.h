@@ -14,8 +14,9 @@ private:
    bool isYellowFlag = false;
 public:
    void simulateRace(Weather &weather);
-   void printRaceResults() const;
-   bool isYellowFlagActive() const;
+   void printRaceResults();
+   bool isYellowFlagActive();
+   
    void registerCar(Car car);
    void registerMotorcycle(Motorcycle motorcycle);
    void registerTruck(Truck truck);

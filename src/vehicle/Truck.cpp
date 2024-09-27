@@ -10,7 +10,7 @@ string Truck::getTruckName(){
 
 void Truck::prepareForLap(bool& isYellowFlag){
     if (hoursSpentBroken == 0){
-        if (rand() % 100 < 98){
+        if (rand() % 100 < 5){
             actualSpeed = 0;
             hoursSpentBroken++;
             isBroken = true;
