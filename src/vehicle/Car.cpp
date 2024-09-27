@@ -2,8 +2,6 @@
 
 using namespace std;
 
-Car::
-
 Car::Car() : name(getRandomCarName()), normalSpeed(80 + rand() % 30), distanceTraveled(0){}
 
 string Car::getRandomCarName(){
