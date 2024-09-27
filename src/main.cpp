@@ -18,8 +18,8 @@ int main() {
     Race race{};
 
     for(int i = 0; i < numberOfRacersPerType; i++){
-        race.registerCar(Car());
-        // race.registerMotorcycle(Motorcycle());
+        // race.registerCar(Car());
+        race.registerMotorcycle(Motorcycle());
         // race.registerTruck(Truck());
     }
 

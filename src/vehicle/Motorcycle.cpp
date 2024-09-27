@@ -2,13 +2,13 @@
 
 using namespace std;
 
-Motorcycle::Motorcycle(): name(getMotorcycleName()), normalSpeed(100){}
+Motorcycle::Motorcycle(): name(getMotorcycleName()), normalSpeed(100), distanceTraveled(0){}
 
 string Motorcycle::getMotorcycleName(){
     return "Motorcycle " + to_string(++motorcycleCount);
 }
 
-void Motorcycle::prepareForLap(Weather& weather, bool& isYellowFlag){
+void Motorcycle::prepareForLap(Weather& weather){
     if (weather.isRaining()){
         actualSpeed = 5 + rand() % 45;
     } else {

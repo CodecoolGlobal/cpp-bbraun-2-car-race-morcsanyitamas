@@ -20,7 +20,7 @@ void Race::simulateRace(Weather& weather){
         }
 
         for (Motorcycle &motorcycle : motorcycles) {
-            motorcycle.prepareForLap(weather, isYellowFlag);
+            motorcycle.prepareForLap(weather);
             motorcycle.moveForAnHour();
         }
 
