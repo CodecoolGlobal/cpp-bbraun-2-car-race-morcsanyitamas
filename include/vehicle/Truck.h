@@ -3,18 +3,23 @@
 #include "Weather.h"
 #include <string>
 
+enum class TruckStatus {
+   NOT_BROKEN,
+   REPAIRING_1H,
+   REPAIRING_2H
+};
+
 class Truck {
 private:
    static std::string getTruckName();
-   int hoursSpentBroken = 0;
-   bool isBroken = false;
+   TruckStatus truckStatus;
    std::string name;
    double normalSpeed;
    double actualSpeed;
-   double distanceTraveled = 0;
+   double distanceTraveled;
 public:
    Truck();
-   void prepareForLap(bool &isYellowFlag);
+   void prepareForLap(bool& isYellowFlag);
    std::string toString();
    void moveForAnHour();
 };

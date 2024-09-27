@@ -2,42 +2,31 @@
 
 using namespace std;
 
-Truck::Truck() : name(getTruckName()), normalSpeed(100){}
+Truck::Truck() : name(getTruckName()), normalSpeed(100), distanceTraveled(0), truckStatus(TruckStatus::NOT_BROKEN){}
 
 string Truck::getTruckName(){
     return to_string(rand() % 1000);
 }
 
 void Truck::prepareForLap(bool& isYellowFlag){
-    if (hoursSpentBroken == 0){
-        if (rand() % 100 < 5){
-            actualSpeed = 0;
-            hoursSpentBroken++;
-            isBroken = true;
+    
+    switch (truckStatus){
+        case TruckStatus::NOT_BROKEN:
+        case TruckStatus::REPAIRING_2H:
+            if (rand() % 100 < 5){
+                truckStatus = TruckStatus::REPAIRING_1H;
+                isYellowFlag = true;
+                actualSpeed = 0;
+            } else {
+                truckStatus = TruckStatus::NOT_BROKEN;
+                actualSpeed = normalSpeed;
+            }
+            break;
+        case TruckStatus::REPAIRING_1H:
+            truckStatus = TruckStatus::REPAIRING_2H;
             isYellowFlag = true;
-        } else {
-            actualSpeed = normalSpeed;
-        }
-        return;
-    }
-
-    if (hoursSpentBroken == 2){
-        if (rand() % 100 < 98){
             actualSpeed = 0;
-            hoursSpentBroken++;
-            isBroken = true;
-            isYellowFlag = true;
-        } else {
-            hoursSpentBroken = 0;
-            actualSpeed = normalSpeed;
-            isBroken = false;
-        }
-        return;
-    }
-
-    if (hoursSpentBroken == 1){
-        isYellowFlag = true;
-        hoursSpentBroken++;
+            break; 
     }
 }
 

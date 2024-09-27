@@ -5,7 +5,7 @@
 using namespace std;
 
 void Race::simulateRace(Weather& weather){
-    for (int i = 0; i < 50; ++i) {
+    for (int lapIndex = 0; lapIndex < 50; lapIndex++) {
         isYellowFlag = false;
         weather.randomize();
         
