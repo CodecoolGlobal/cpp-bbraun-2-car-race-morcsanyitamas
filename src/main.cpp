@@ -14,12 +14,12 @@ int main() {
     srand(time(NULL));
     cout << "============================== REGISTRATION STARTS ==============================" << endl;
 
-    int numberOfRacersPerType = 10;
+    int const numberOfRacersPerType = 10;
     Race race{};
 
     for(int i = 0; i < numberOfRacersPerType; i++){
-        // race.registerCar(Car());
-        // race.registerMotorcycle(Motorcycle());
+        race.registerCar(Car());
+        race.registerMotorcycle(Motorcycle());
         race.registerTruck(Truck());
     }
 
